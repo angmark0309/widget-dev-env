@@ -1,0 +1,39 @@
+.sidebar {
+  top: 0;
+  left: 1.25rem;
+  right: 1.25rem;
+  margin: 0 0 0.625rem;
+  position: absolute; 
+}
+
+.logo {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidebar__title {
+  display: block;
+  text-align: center;
+  font-family: "arial"; 
+  padding: 4px;
+}
+
+.sidebar__location {
+  background: rgb(255, 255, 255);
+  margin-bottom: 10px;
+}
+
+.sidebar__text {
+  background: #000;
+  color: rgb(255, 255, 255);
+}
+
+body {
+  background-color: transparent;
+  overflow: hidden;
+}
+
