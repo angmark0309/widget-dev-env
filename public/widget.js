@@ -16,7 +16,6 @@ function amountscrolled() {
     var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
     var trackLength = docheight - winheight
     var pctScrolled = Math.floor(scrollTop / trackLength * 100) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
-    console.log(pctScrolled)
         iframe.contentWindow.postMessage(pctScrolled, "*")
     
 }
@@ -35,10 +34,12 @@ function createIframeWithDiv() {
     iframe.style.overflow = "hidden"
     iframe.style.position = "fixed"
     iframe.style.bottom = "20px"
+    /**Commented out for dev environemnt*/
    // createIframeStyleSheet(iframe)
     var rootDiv = iframe.contentWindow.document.createElement("div")
     rootDiv.setAttribute("id", "root")
     iframe.contentWindow.document.body.appendChild(rootDiv)
+    /**Commented out for dev environemnt*/
    // createScriptInIframe(iframe)
 }
 
@@ -46,15 +47,14 @@ function createIframeWithDiv() {
 function createScriptInIframe(iframe){
     var script = iframe.contentWindow.document.createElement("script")
     script.type = "text/javascript"
-    script.src = "https://rawgit.com/angmark0309/widget/master/main.3039b561.js"
+    script.src = "https://rawgit.com/angmark0309/widget/master/static/js/main.js"
     iframe.contentWindow.document.body.appendChild(script)
-    console.log('iframe.contentWindow =', iframe.parentElement)
 }
 
 // set style to production
 function createIframeStyleSheet(iframe) {
     var cssLink = document.createElement("link");
-    cssLink.href = "./src/App.css";
+    cssLink.href = "https://rawgit.com/angmark0309/widget/master/static/css/main.css";
     cssLink.rel = "stylesheet";
     cssLink.type = "text/css";
     iframe.contentWindow.document.head.appendChild(cssLink);
